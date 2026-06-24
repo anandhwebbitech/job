@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   lj-global.js  — LinearJobs Global JavaScript
+   lj-global.js  — Queue Jobs Global JavaScript
    Place at: public/js/lj-global.js
 ═══════════════════════════════════════════════════════════ */
 

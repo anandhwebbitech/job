@@ -1,6 +1,6 @@
 {{-- ══════════════════════════════════════════════════════════
      resources/views/employer/candidates.blade.php
-     LinearJobs – Candidates Module  ·  Ultra Premium Design
+     QueueJobs – Candidates Module  ·  Ultra Premium Design
 ══════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title','Candidates')

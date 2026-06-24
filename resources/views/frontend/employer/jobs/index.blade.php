@@ -1,6 +1,6 @@
 {{-- ════════════════════════════════════════════════════════
      resources/views/employer/jobs/index.blade.php
-     Job Listings — LinearJobs Employer Dashboard
+     Job Listings — QueueJobs Employer Dashboard
 ════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title', 'My Job Listings')

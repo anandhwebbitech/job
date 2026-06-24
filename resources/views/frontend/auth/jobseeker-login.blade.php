@@ -2,7 +2,7 @@
      resources/views/frontend/auth/jobseeker-login.blade.php
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Job Seeker Login – LinearJobs')
+@section('title', 'Job Seeker Login – QueueJobs')
 
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -114,7 +114,7 @@
 
         <div class="lj-auth-logo">
           <div class="lj-auth-logo-ico"><i class="fa-solid fa-user-tie"></i></div>
-          LinearJobs
+          QueueJobs
         </div>
         <div class="lj-auth-heading">Job Seeker Login</div>
         <div class="lj-auth-sub">Welcome back! Sign in to find your next opportunity.</div>
@@ -182,7 +182,7 @@
         <div class="lj-or">or</div>
 
         <div class="lj-auth-switch">
-          New to LinearJobs? <a href="{{ route('jobseeker.register') }}">Register Free</a>
+          New to QueueJobs? <a href="{{ route('jobseeker.register') }}">Register Free</a>
         </div>
         <div class="lj-auth-switch" style="margin-top:10px;">
           Are you an employer? <a href="{{ route('employer.login') }}">Employer Login</a>

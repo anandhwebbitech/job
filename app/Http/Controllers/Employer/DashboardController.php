@@ -102,15 +102,44 @@ class DashboardController extends Controller
        JOBS — LIST
     ============================== */
 
+    // public function jobs(Request $request)
+    // {
+    //     $query = Job::withCount('applications');
+
+    //     if ($request->filled('search')) {
+    //         $query->where(function ($q) use ($request) {
+    //             $q->where('job_title', 'like', '%' . $request->search . '%')
+    //               ->orWhere('job_category', 'like', '%' . $request->search . '%')
+    //               ->orWhere('city', 'like', '%' . $request->search . '%');
+    //         });
+    //     }
+
+    //     if ($request->filled('status') && $request->status !== 'all') {
+    //         $query->where('status', $request->status);
+    //     }
+
+    //     if ($request->filled('category')) {
+    //         $query->where('job_category', $request->category);
+    //     }
+
+    //     $jobs = $query->latest()->paginate(10)->withQueryString();
+
+    //     return view('frontend.employer.jobs.index', compact('jobs'));
+    // }
     public function jobs(Request $request)
     {
-        $query = Job::withCount('applications');
+       $query = Job::withCount('applications')
+            ->where('create_user_id', auth()->id())
+            ->where(function ($q) {
+                $q->whereNull('old')
+                  ->orWhere('old', 0);
+            });
 
         if ($request->filled('search')) {
             $query->where(function ($q) use ($request) {
                 $q->where('job_title', 'like', '%' . $request->search . '%')
-                  ->orWhere('job_category', 'like', '%' . $request->search . '%')
-                  ->orWhere('city', 'like', '%' . $request->search . '%');
+                ->orWhere('job_category', 'like', '%' . $request->search . '%')
+                ->orWhere('city', 'like', '%' . $request->search . '%');
             });
         }
 
@@ -122,7 +151,9 @@ class DashboardController extends Controller
             $query->where('job_category', $request->category);
         }
 
-        $jobs = $query->latest()->paginate(10)->withQueryString();
+        $jobs = $query->latest()
+                    ->paginate(10)
+                    ->withQueryString();
 
         return view('frontend.employer.jobs.index', compact('jobs'));
     }
@@ -256,13 +287,11 @@ class DashboardController extends Controller
                 ->whereDate('end_date', '>=', now())
                 ->latest()
                 ->first();
-
-            // ❌ No active plan
+            // dd($plan,auth()->id());
             if (!$plan) {
                 return back()->withInput()->with('error', 'Please purchase a job plan first');
             }
 
-            // ❌ Limit reached
             if ($plan->jobs_used >= $plan->job_post_limit) {
                 return back()->withInput()->with('error', 'Job post limit reached for your plan');
             }
@@ -286,8 +315,8 @@ class DashboardController extends Controller
                 'education'           => 'required|string|max:50',
                 'job_type'            => 'required|in:Full Time,Part Time,Contract',
                 'status'              => 'required|in:active,inactive',
-                'skills' => 'required|array|min:1',
-                'skills.*' => 'string|max:100',
+                'skills'              => 'required|array|min:1',
+                'skills.*'            => 'string|max:100',
                 'terms'               => 'accepted',
             ]);
             // skills decode
@@ -339,8 +368,6 @@ class DashboardController extends Controller
                 'admin_status'     => 0,
                 'is_new'           => 1,
 
-                
-            
                 'expiry_date' => now()->addDays($duration),
 
                 'create_user_id'   => auth()->id(),
@@ -351,9 +378,6 @@ class DashboardController extends Controller
             =============================== */
             $plan->increment('jobs_used');
 
-            /* ===============================
-            NOTIFICATION
-            =============================== */
             if ($job) {
                 $message = 'New Job received for approval';
 
@@ -545,18 +569,34 @@ class DashboardController extends Controller
        JOBS — DELETE
     ============================== */
 
+    // public function jobsDestroy($id)
+    // {
+    //     $job = Job::findOrFail($id);
+    //     $title = $job->job_title;
+
+    //     // // Delete related applications first
+    //     // $job->applications()->delete();
+    //     // $job->delete();
+
+    //     $job->update([
+    //         'old' => 1
+    //     ]);
+
+    //     return redirect()
+    //         ->route('employer.jobs.index')
+    //         ->with('success', 'Job "' . $title . '" has been deleted.');
+    // }
     public function jobsDestroy($id)
     {
         $job = Job::findOrFail($id);
-        $title = $job->job_title;
 
-        // Delete related applications first
-        $job->applications()->delete();
-        $job->delete();
+        $job->update([
+            'old' => 1
+        ]);
 
         return redirect()
             ->route('employer.jobs.index')
-            ->with('success', 'Job "' . $title . '" has been deleted.');
+            ->with('success', 'Job archived successfully.');
     }
 
 

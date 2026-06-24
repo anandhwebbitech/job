@@ -3,7 +3,7 @@
      Pricing Page – LinearJobs  (Compact & Clean)
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Pricing – LinearJobs')
+@section('title', 'Pricing – QueueJobs')
 
 @push('styles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -1748,7 +1748,7 @@
                 <div class="pm-ico"><i class="fa-solid fa-image"></i></div>
                 <div>
                     <div class="pm-name">Banner Advertisement</div>
-                    <div class="pm-sub">Image banner on LinearJobs home page — supports multiple positions</div>
+                    <div class="pm-sub">Image banner on QueueJobs home page — supports multiple positions</div>
                 </div>
                 <div class="pm-right">
                     <div class="pm-stat">
@@ -1839,7 +1839,7 @@
         <div class="faq">
             <div class="faq-hdr">
                 <h3>Frequently Asked Questions</h3>
-                <p>Everything you need to know about LinearJobs pricing</p>
+                <p>Everything you need to know about QueueJobs pricing</p>
             </div>
             <div class="faq-grid">
                 @php
@@ -1875,7 +1875,7 @@
                                 'Refunds are not available after a plan is activated. Review all plan details carefully before purchasing.',
                         ],
                         [
-                            'q' => 'Is LinearJobs free for job seekers?',
+                            'q' => 'Is QueueJobs free for job seekers?',
                             'a' =>
                                 'Yes — 100% free. No charges for browsing, applying, or creating a job seeker profile.',
                         ],

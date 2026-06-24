@@ -2,7 +2,7 @@
      resources/views/frontend/auth/employer-login.blade.php
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Employer Login – LinearJobs')
+@section('title', 'Employer Login – QueueJobs')
 
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -99,7 +99,7 @@
       <div class="lj-auth-form-box">
         <div class="lj-auth-logo">
           <div class="lj-auth-logo-ico"><i class="fa-solid fa-building"></i></div>
-          LinearJobs
+          QueueJobs
         </div>
         <div class="lj-auth-heading">Employer Login</div>
         <div class="lj-auth-sub">Access your employer dashboard to manage job postings and applications.</div>

@@ -1,6 +1,6 @@
 {{-- ════════════════════════════════════════════════════════
      resources/views/employer/jobs/show.blade.php
-     View Job Details – LinearJobs Employer Dashboard
+     View Job Details – QueueJobs Employer Dashboard
 ════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title', ($job->job_title ?? 'Job Details') . ' – View')

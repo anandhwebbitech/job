@@ -1,6 +1,6 @@
 {{-- ════════════════════════════════════════════════════════
      resources/views/employer/jobs/create.blade.php
-     Post a Job – LinearJobs Employer Dashboard  (Ultra Redesign)
+     Post a Job – Queue Employer Dashboard  (Ultra Redesign)
 ════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title', 'Post a New Job')
@@ -2531,7 +2531,7 @@
                             <div class="pj-terms-box">
                                 <input type="checkbox" id="termsCheck" name="terms" value="1" />
                                 <label for="termsCheck">
-                                    I confirm that all job details are accurate and comply with LinearJobs'
+                                    I confirm that all job details are accurate and comply with QueueJobs'
                                     <a href="{{ route('home') }}" target="_blank">Terms &amp; Conditions</a>.
                                     I agree not to post fraudulent, misleading or illegal job listings.
                                 </label>

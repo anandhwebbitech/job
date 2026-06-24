@@ -50,6 +50,7 @@
                                 <th>Salary</th>
                                 <th>Job Type</th>
                                 <th>Status</th>
+                                <th>Job Status</th>
                                 <th>Action</th>
                             </tr>
 
@@ -277,7 +278,12 @@
                         orderable: false,
                         searchable: false
                     },
-
+                    {
+                        data: 'job_status',
+                        name: 'job_status',
+                        orderable: false,
+                        searchable: false
+                    },
                     {
                         data: 'action',
                         name: 'action',

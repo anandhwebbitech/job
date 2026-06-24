@@ -50,7 +50,7 @@
         <a href="{{ route('employer.singleregister') }}" class="lj-ft-link">Post a Job</a>
         <a href="{{ route('employer.login') }}"      class="lj-ft-link">Employer Login</a>
         <a href="{{ route('employer.singleregister') }}"    class="lj-ft-link">Register Company</a>
-        <a href="{{ route('pricing') }}"             class="lj-ft-link">Pricing Plans</a>
+        {{-- <a href="{{ route('pricing') }}"             class="lj-ft-link">Pricing Plans</a> --}}
         <a href="{{ route('jobs.index') }}"          class="lj-ft-link">Hire Talent</a>
       </div>
 
@@ -63,7 +63,7 @@
 
         <div class="lj-ft-contact">
           <i class="fas fa-envelope"></i>
-          <span>support@linearjobs.com</span>
+          <span>support@Queuejobs.com</span>
         </div>
         <div class="lj-ft-contact">
           <i class="fas fa-phone"></i>
@@ -80,7 +80,7 @@
     {{-- ── Bottom Bar ── --}}
     <div class="lj-footer-bar">
       <div class="lj-ft-copy">
-        &copy; {{ date('Y') }} LinearJobs. All rights reserved.
+        &copy; {{ date('Y') }} QueueJobs. All rights reserved.
         Made with <span style="color:#e25555;">❤️</span> in Tamil Nadu.
       </div>
       <div class="lj-ft-legal">

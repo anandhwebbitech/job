@@ -1,6 +1,5 @@
 {{-- ══════════════════════════════════════════════════════════
      resources/views/employer/settings.blade.php
-     LinearJobs – Employer Settings
 ══════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title', 'Settings')
@@ -272,7 +271,7 @@
                                 <div class="emp-divider-line"></div>
                             </div>
 
-                            @php $emailNotifs = [['name' => 'email_new_application', 'title' => 'New Application Received', 'desc' => 'Get an email whenever someone applies to your job'], ['name' => 'email_shortlist', 'title' => 'Candidate Shortlisted', 'desc' => 'Notify when a candidate is shortlisted'], ['name' => 'email_plan_expiry', 'title' => 'Plan Expiry Reminder', 'desc' => 'Receive reminders 7 days before plan expires'], ['name' => 'email_admin_message', 'title' => 'Admin Messages', 'desc' => 'Important messages from the LinearJobs team']]; @endphp
+                            @php $emailNotifs = [['name' => 'email_new_application', 'title' => 'New Application Received', 'desc' => 'Get an email whenever someone applies to your job'], ['name' => 'email_shortlist', 'title' => 'Candidate Shortlisted', 'desc' => 'Notify when a candidate is shortlisted'], ['name' => 'email_plan_expiry', 'title' => 'Plan Expiry Reminder', 'desc' => 'Receive reminders 7 days before plan expires'], ['name' => 'email_admin_message', 'title' => 'Admin Messages', 'desc' => 'Important messages from the QueueJobs team']]; @endphp
 
                             @foreach ($emailNotifs as $pref)
                                 <div class="toggle-row">

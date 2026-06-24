@@ -67,12 +67,21 @@ class JobSeekerController extends Controller
     public function show($id)
     {
         $user = User::with('details')->findOrFail($id);
-        $user->created_at_formatted = $user->created_at
-            ? $user->created_at->format('d M Y h:i A')
-            : '-';
-        if ($user->detail && $user->detail->skills) {
-            $user->detail->skills = json_decode($user->detail->skills, true);
+
+        $user->created_at_formatted = optional($user->created_at)
+            ->format('d M Y h:i A');
+
+        if ($user->details && $user->details->skills) {
+
+            $skillIds = json_decode($user->details->skills, true);
+
+            $skills = \App\Models\Skill::whereIn('id', $skillIds)
+                        ->pluck('skill_name')
+                        ->toArray();
+
+            $user->details->skill_names = $skills;
         }
+
         return response()->json($user);
     }
 
@@ -135,7 +144,7 @@ class JobSeekerController extends Controller
 
         Mail::send('emails.registermail', $data, function ($message) use ($data, $statusText) {
             $message->to($data['email'])
-                ->subject('Linner Job Portal Registration is ' . $statusText);
+                ->subject('Queue Job Portal Registration is ' . $statusText);
         });
     }
 

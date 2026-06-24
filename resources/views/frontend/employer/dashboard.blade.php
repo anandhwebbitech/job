@@ -1,6 +1,6 @@
 {{-- ══════════════════════════════════════════════════════════
      resources/views/employer/dashboard.blade.php
-     LinearJobs – Employer Dashboard  ·  Premium Gradient Design
+     QueueJobs – Employer Dashboard  ·  Premium Gradient Design
 ══════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title','Dashboard')

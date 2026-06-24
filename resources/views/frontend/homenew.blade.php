@@ -5,7 +5,7 @@
 ══════════════════════════════════════════════════════ --}}
 
 @extends('frontend.app')
-@section('title', 'LinearJobs – Find Your Dream Job in India')
+@section('title', 'QueueJobs – Find Your Dream Job in India')
 
 @push('styles')
 <style>

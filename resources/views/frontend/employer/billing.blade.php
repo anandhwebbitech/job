@@ -1,6 +1,6 @@
 {{-- ══════════════════════════════════════════════════════════
      resources/views/employer/billing.blade.php
-     LinearJobs – Billing / Plans Module (Full & Fixed)
+     QueueJobs – Billing / Plans Module (Full & Fixed)
 ══════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title','Billing / Plans')
@@ -1119,70 +1119,70 @@ function selectPlan(prefix, id, selClass) {
   if (radio) radio.checked = true;
 }
 
-//   function buyJobPlan() {
+  function buyJobPlan() {
 
-//       let selected = document.querySelector('input[name="job_plan"]:checked');
+      let selected = document.querySelector('input[name="job_plan"]:checked');
 
-//       let planId = selected.value;
-//       let quantity = document.getElementById('qty_' + planId).value;
+      let planId = selected.value;
+      let quantity = document.getElementById('qty_' + planId).value;
 
-//       fetch('{{ url("/create-order") }}', {
-//           method: 'POST',
-//           headers: {
-//               'Content-Type': 'application/json',
-//               'X-CSRF-TOKEN': '{{ csrf_token() }}'
-//           },
-//           body: JSON.stringify({ plan_id: planId, quantity: quantity })
-//       })
-//       .then(res => res.json())
-//       .then(data => {
+      fetch('{{ url("/create-order") }}', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'X-CSRF-TOKEN': '{{ csrf_token() }}'
+          },
+          body: JSON.stringify({ plan_id: planId, quantity: quantity })
+      })
+      .then(res => res.json())
+      .then(data => {
 
-//           let options = {
-//               "key": data.key,
-//               "amount": data.amount,
-//               "currency": "INR",
-//               "name": "LinearJobs",
-//               "description": "Plan Purchase",
-//               "order_id": data.order_id,
+          let options = {
+              "key": data.key,
+              "amount": data.amount,
+              "currency": "INR",
+              "name": "QueueJobs",
+              "description": "Plan Purchase",
+              "order_id": data.order_id,
 
-//               "handler": function (response){
-//                   verifyPayment(response, planId, quantity);
-//               },
+              "handler": function (response){
+                  verifyPayment(response, planId, quantity);
+              },
 
-//               "theme": {
-//                   "color": "#2563eb"
-//               }
-//           };
+              "theme": {
+                  "color": "#2563eb"
+              }
+          };
 
-//           let rzp = new Razorpay(options);
-//           rzp.open();
-//       });
-//   }
-// function verifyPayment(response, planId, quantity) {
+          let rzp = new Razorpay(options);
+          rzp.open();
+      });
+  }
+function verifyPayment(response, planId, quantity) {
 
-//     fetch('{{ url("/verify-payment") }}', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'X-CSRF-TOKEN': '{{ csrf_token() }}'
-//         },
-//         body: JSON.stringify({
-//             razorpay_payment_id: response.razorpay_payment_id,
-//             razorpay_order_id: response.razorpay_order_id,
-//             razorpay_signature: response.razorpay_signature,
-//             plan_id: planId,
-//             quantity: quantity
-//         })
-//     })
-//     .then(res => res.json())
-//     .then(data => {
-//       Swal.fire({
-//           title: "Success 🎉",
-//           text: data.message, // 🔥 dynamic
-//           icon: "success"
-//       }).then(() => location.reload());
-//     });
-// }
+    fetch('{{ url("/verify-payment") }}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        },
+        body: JSON.stringify({
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_signature: response.razorpay_signature,
+            plan_id: planId,
+            quantity: quantity
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+      Swal.fire({
+          title: "Success 🎉",
+          text: data.message, 
+          icon: "success"
+      }).then(() => location.reload());
+    });
+}
 function renewJobPlan() {
 
     if (confirm('Renew current 30 Days Plan for ₹1,180 (incl. GST)?')) {
@@ -1275,7 +1275,6 @@ function buyBannerPlan() {
 
             handler: function (response) {
 
-                // 👉 VERIFY PAYMENT (route use)
                 fetch("{{ route('banner.payment.verify') }}", {
                     method: 'POST',
                     headers: {

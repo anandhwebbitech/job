@@ -1,9 +1,9 @@
 {{-- ═══════════════════════════════════════════════════
      resources/views/frontend/jobs/find-jobs.blade.php
-     Find Jobs – LinearJobs (Modern & Responsive)
+     Find Jobs – QueueJobs (Modern & Responsive)
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Find Jobs in Tamil Nadu – LinearJobs')
+@section('title', 'Find Jobs in Tamil Nadu – QueueJobs')
 
 @push('styles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"

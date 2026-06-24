@@ -3,7 +3,7 @@
      Contact Page – LinearJobs
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Contact Us – LinearJobs')
+@section('title', 'Contact Us – Queue Jobs')
 
 @push('styles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -658,7 +658,7 @@
                 <div class="lj-info-card">
                     <div class="lj-info-card-ico blue"><i class="fa-solid fa-envelope"></i></div>
                     <div class="lj-info-card-label">Email Support</div>
-                    <div class="lj-info-card-value"><a href="mailto:support@linearjobs.com">support@linearjobs.com</a></div>
+                    <div class="lj-info-card-value"><a href="mailto:support@queuejobs.com">support@queuejobs.com</a></div>
                     <div class="lj-info-card-sub">We reply within 24 hours</div>
                 </div>
                 <div class="lj-info-card">
@@ -689,7 +689,7 @@
                             <div class="lj-contact-detail-text">
                                 <div class="lj-contact-detail-label">Email</div>
                                 <div class="lj-contact-detail-val"><a
-                                        href="mailto:support@linearjobs.com">support@linearjobs.com</a></div>
+                                        href="mailto:support@queuejobs.com">support@queuejobs.com</a></div>
                             </div>
                         </div>
                         <div class="lj-contact-detail">
@@ -710,9 +710,9 @@
 
                     {{-- Working Hours --}}
                     <div class="lj-sidebar-card">
-                        <div class="lj-sidebar-card-title">
+                        {{-- <div class="lj-sidebar-card-title">
                             <i class="fa-solid fa-clock"></i> Working Hours
-                        </div>
+                        </div> --}}
 
                         <div class="lj-hours-status open-247">
                             <i class="fa-solid fa-circle-check"></i> Open 24/7

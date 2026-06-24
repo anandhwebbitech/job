@@ -122,9 +122,11 @@ class EmployerController extends Controller
     public function show($id)
     {
         $employer = User::with('employerDetails')->findOrFail($id);
-        $employer->created_at_formatted = $employer->created_at 
-        ? $employer->created_at->format('d M Y h:i A') 
-        : '-';
+
+        $employer->created_at_formatted = $employer->created_at
+            ? $employer->created_at->format('d M Y h:i A')
+            : '-';
+
         return response()->json($employer);
     }
 

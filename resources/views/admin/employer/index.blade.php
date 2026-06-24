@@ -80,28 +80,48 @@
                             </tr>
 
                             <tr>
+                                <th>Owner Mobile</th>
+                                <td id="owner_mobile"></td>
+                            </tr>
+
+                            <tr>
+                                <th>HR Name</th>
+                                <td id="hr_name"></td>
+                            </tr>
+
+                            <tr>
+                                <th>HR Mobile</th>
+                                <td id="hr_mobile"></td>
+                            </tr>
+
+                            <tr>
                                 <th>Email</th>
                                 <td id="email"></td>
                             </tr>
 
                             <tr>
-                                <th>Contact Number</th>
-                                <td id="contact_number"></td>
-                            </tr>
-
-                            <tr>
-                                <th>Contact Type</th>
-                                <td id="contact_type"></td>
-                            </tr>
-
-                            <tr>
-                                <th>Alternate Contact</th>
-                                <td id="alternate_contact_number"></td>
-                            </tr>
-
-                            <tr>
                                 <th>Address</th>
-                                <td id="address"></td>
+                                <td id="company_address"></td>
+                            </tr>
+
+                            <tr>
+                                <th>State</th>
+                                <td id="state"></td>
+                            </tr>
+
+                            <tr>
+                                <th>District</th>
+                                <td id="district"></td>
+                            </tr>
+
+                            <tr>
+                                <th>City</th>
+                                <td id="city"></td>
+                            </tr>
+
+                            <tr>
+                                <th>Pincode</th>
+                                <td id="pincode"></td>
                             </tr>
 
                             <tr>
@@ -115,8 +135,23 @@
                             </tr>
 
                             <tr>
-                                <th>Proof Document</th>
-                                <td id="proof_document"></td>
+                                <th>MSME Number</th>
+                                <td id="msme_number"></td>
+                            </tr>
+
+                            <tr>
+                                <th>GST Certificate</th>
+                                <td id="gst_certificate"></td>
+                            </tr>
+
+                            <tr>
+                                <th>PAN Document</th>
+                                <td id="pan_document"></td>
+                            </tr>
+
+                            <tr>
+                                <th>MSME Certificate</th>
+                                <td id="msme_certificate"></td>
                             </tr>
 
                             <tr>
@@ -198,58 +233,94 @@
 
         $(document).on('click', '.viewEmployer', function () {
 
-            let id = $(this).data('id');
+    let id = $(this).data('id');
 
-            $.ajax({
-                url: "{{ url('admin/employers') }}/" + id,
-                type: "GET",
+    $.ajax({
+        url: "{{ url('admin/employers') }}/" + id,
+        type: "GET",
 
-                success: function (res) {
+        success: function (res) {
 
-                    let details = res.employer_details || {}; // ✅ important
+            console.log(res);
 
-                    $('#company_name').text(details.company_name ?? '-');
-                    $('#owner_name').text(details.owner_name ?? '-');
-                    $('#email').text(res.email ?? '-');
+            let details = res.employerDetails || res.employer_details || {};
 
-                    $('#contact_number').text(details.owner_mobile ?? '-');
-                    $('#contact_type').text('Owner'); // static or adjust if needed
-                    $('#alternate_contact_number').text(details.hr_mobile ?? '-');
+            $('#company_name').text(details.company_name || '-');
 
-                    $('#address').text(details.company_address ?? '-');
-                    $('#gst_number').text(details.gst_number ?? '-');
-                    $('#pan_number').text(details.pan_number ?? '-');
+            $('#owner_name').text(details.owner_name || '-');
+            $('#owner_mobile').text(details.owner_mobile || '-');
 
-                    // ✅ STATUS FIX (use is_active)
-                    let status = parseInt(res.is_active);
-                    let statusHtml = '';
+            $('#hr_name').text(details.hr_name || '-');
+            $('#hr_mobile').text(details.hr_mobile || '-');
 
-                    switch(status) {
-                        case 0:
-                            statusHtml = '<span class="badge bg-warning">Pending</span>';
-                            break;
-                        case 1:
-                            statusHtml = '<span class="badge bg-success">Approved</span>';
-                            break;
-                        case 3:
-                            statusHtml = '<span class="badge bg-danger">Rejected</span>';
-                            break;
-                        default:
-                            statusHtml = '<span class="badge bg-secondary">Unknown</span>';
-                    }
+            $('#email').text(res.email || details.email || '-');
 
-                    $('#status').html(statusHtml);
+            $('#company_address').text(details.company_address || '-');
 
-                    $('#created_at').text(res.created_at_formatted ?? '-');
+            $('#state').text(details.state || '-');
+            $('#district').text(details.district || '-');
+            $('#city').text(details.city || '-');
+            $('#pincode').text(details.pincode || '-');
 
-                    $('#viewEmployerModal').modal('show');
-                },
+            $('#gst_number').text(details.gst_number || '-');
+            $('#pan_number').text(details.pan_number || '-');
+            $('#msme_number').text(details.msme_number || '-');
 
-                error: function (xhr) {
-                    console.log(xhr.responseText);
-                }
-            });
-        });
+            let documentUrl = "{{ asset('public/uploads/employers') }}";
+
+            $('#gst_certificate').html(
+                details.gst_certificate
+                    ? `<a href="${documentUrl}/${details.gst_certificate}" target="_blank" class="btn btn-sm btn-primary">View GST</a>`
+                    : '-'
+            );
+
+            $('#pan_document').html(
+                details.pan_document
+                    ? `<a href="${documentUrl}/${details.pan_document}" target="_blank" class="btn btn-sm btn-success">View PAN</a>`
+                    : '-'
+            );
+
+            $('#msme_certificate').html(
+                details.msme_certificate
+                    ? `<a href="${documentUrl}/${details.msme_certificate}" target="_blank" class="btn btn-sm btn-info">View MSME</a>`
+                    : '-'
+            );
+
+            let statusHtml = '';
+
+            switch (parseInt(res.is_active)) {
+
+                case 0:
+                    statusHtml = '<span class="badge bg-warning">Pending</span>';
+                    break;
+
+                case 1:
+                    statusHtml = '<span class="badge bg-success">Approved</span>';
+                    break;
+
+                case 3:
+                    statusHtml = '<span class="badge bg-danger">Rejected</span>';
+                    break;
+
+                default:
+                    statusHtml = '<span class="badge bg-secondary">Unknown</span>';
+            }
+
+            $('#status').html(statusHtml);
+
+            $('#created_at').text(res.created_at_formatted || '-');
+
+            $('#viewEmployerModal').modal('show');
+        },
+
+        error: function (xhr) {
+
+            console.log(xhr.responseText);
+
+        }
+    });
+
+});
 
         let previousStatus;
 

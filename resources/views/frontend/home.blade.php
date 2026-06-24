@@ -4,7 +4,7 @@
 ════════════════════════════════════════════════════════ --}}
 
 @extends('frontend.app')
-@section('title', 'LinearJobs – Find Your Next Job in India')
+@section('title', 'QueueJobs – Find Your Next Job in India')
 
 {{-- ═══════════════════════════════
      PAGE CSS (home-specific)
@@ -1309,7 +1309,7 @@
     <section class="lj-section lj-bg-gray">
         <div class="lj-wrap">
             <div style="text-align:center; margin-bottom:28px;">
-                <div class="lj-eyebrow">Why LinearJobs</div>
+                <div class="lj-eyebrow">Why QueueJobs</div>
                 <div class="lj-heading">Built for India</div>
             </div>
             <div class="lj-feat-grid">
@@ -1319,7 +1319,7 @@
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <div class="lj-feat-name">Trusted by MSMEs</div>
-                    <div class="lj-feat-text">Hundreds of verified small and medium businesses rely on LinearJobs to find
+                    <div class="lj-feat-text">Hundreds of verified small and medium businesses rely on QueueJobs to find
                         reliable talent efficiently.</div>
                 </div>
 

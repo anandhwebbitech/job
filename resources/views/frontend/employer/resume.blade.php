@@ -1,6 +1,6 @@
 {{-- ══════════════════════════════════════════════════════════
      resources/views/employer/resume-database.blade.php
-     LinearJobs – Resume Database Module
+     QueueJobs – Resume Database Module
 ══════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title','Resume Database')

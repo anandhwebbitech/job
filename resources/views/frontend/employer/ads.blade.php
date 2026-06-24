@@ -1,6 +1,6 @@
 {{-- ══════════════════════════════════════════════════════════
      resources/views/employer/advertisements.blade.php
-     LinearJobs – Advertisements Module
+     QueueJobs – Advertisements Module
 ══════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title','Advertisements')

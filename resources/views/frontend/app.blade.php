@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="LinearJobs – Tamil Nadu's most trusted job platform connecting skilled professionals with verified MSME employers."/>
+  <meta name="description" content="Queue Jobs – Tamil Nadu's most trusted job platform connecting skilled professionals with verified MSME employers."/>
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>@yield('title', 'LinearJobs – Find Your Next Job in Tamil Nadu')</title>
+  <title>@yield('title', 'Queue Jobs – Find Your Next Job in Tamil Nadu')</title>
   {{-- Bootstrap 5 --}}
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
   {{-- Font Awesome --}}

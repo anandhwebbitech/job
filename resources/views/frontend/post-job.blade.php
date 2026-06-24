@@ -3,7 +3,7 @@
      Post a Job – LinearJobs Employer Panel
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Post a Job – LinearJobs')
+@section('title', 'Post a Job – QueueJobs')
 
 @push('styles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -2413,7 +2413,7 @@
                                     style="width:16px;height:16px;accent-color:#1a56db;margin-top:2px;flex-shrink:0;cursor:pointer;">
                                 <label for="termsCheck"
                                     style="font-size:.83rem;color:#166534;cursor:pointer;line-height:1.5;">
-                                    I confirm that all job details are accurate and comply with LinearJobs'
+                                    I confirm that all job details are accurate and comply with QueueJobs'
                                     <a href="{{ route('home') }}" target="_blank"
                                         style="color:#1a56db;font-weight:600;">Terms &amp; Conditions</a>.
                                     I agree not to post fraudulent or misleading job listings.

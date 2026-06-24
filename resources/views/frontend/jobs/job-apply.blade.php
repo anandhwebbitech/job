@@ -1,9 +1,9 @@
 {{-- ═══════════════════════════════════════════════════
      resources/views/frontend/jobs/job-apply.blade.php
-     Job Application Page – LinearJobs
+     Job Application Page – QueueJobs
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Apply for '.$job->title.' – LinearJobs')
+@section('title', 'Apply for '.$job->title.' – QueueJobs')
 
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />

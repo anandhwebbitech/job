@@ -24,46 +24,58 @@ class JobController extends Controller
 
             return DataTables::of($jobs)
                 ->addIndexColumn()
+
                 ->editColumn('status', function ($row) {
 
                     switch ($row->admin_status) {
+
                         case 0:
-                            return '<span class="badge bg-warning">wating for approve</span>';
+                            return '<span class="badge bg-warning">Waiting For Approve</span>';
+
                         case 1:
                             return '<span class="badge bg-success">Approved</span>';
+
                         case 2:
                             return '<span class="badge bg-info">Re-Submit</span>';
+
                         case 3:
                             return '<span class="badge bg-danger">Rejected</span>';
+
                         default:
                             return '<span class="badge bg-secondary">Unknown</span>';
                     }
-                })               
+                })
+
+                ->addColumn('job_status', function ($row) {
+
+                    if ($row->old == 1) {
+                        return '<span class="badge bg-danger">Deleted By Employer</span>';
+                    }
+
+                    return '<span class="badge bg-success">Active</span>';
+                })
+
                 ->addColumn('action', function ($row) {
 
                     return '
-                        <div class="d-flex gap-2 align-items-center">
-
-                            <button 
+                        <div class="d-flex gap-2">
+                            <button
                                 data-id="'.$row->id.'"
-                                class="btn btn-sm btn-info viewjob"
-                                title="View">
+                                class="btn btn-sm btn-info viewjob">
                                 <i class="fa fa-eye"></i>
                             </button>
                         </div>
                     ';
-                    // <button data-id="' . $row->id . '"
-                    //     data-table-id="employers-table"
-                    //     data-route="' . route('admin.employers.destroy', $row->id) . '" 
-                    //     class="btn btn-sm btn-danger delete"
-                    //     title="Delete">
-                    //     <i class="fa fa-trash"></i>
-                    // </button>
                 })
 
-                ->rawColumns(['status', 'action'])
+                ->setRowClass(function ($row) {
+                    return $row->old == 1 ? 'table-danger' : '';
+                })
+
+                ->rawColumns(['status', 'job_status', 'action'])
                 ->make(true);
         }
+
         return view('admin.job.index');
     }
 

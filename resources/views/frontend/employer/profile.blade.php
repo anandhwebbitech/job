@@ -1,6 +1,6 @@
 {{-- ══════════════════════════════════════════════════════════
      resources/views/employer/company-profile.blade.php
-     LinearJobs – Company Profile  ·  Premium Design
+     QueueJobs – Company Profile  ·  Premium Design
 ══════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title', 'Company Profile')
@@ -1363,7 +1363,7 @@
                 <div class="cp-notice info" style="margin-bottom:18px;">
                     <div class="cp-notice-ico"><i class="fas fa-lock"></i></div>
                     <div>Verification details are <strong>read-only</strong> after admin approval. Contact
-                        <strong>support@linearjobs.in</strong> to update documents.</div>
+                        <strong>support@queuejobs.in</strong> to update documents.</div>
                 </div>
 
                 <div class="cp-card">

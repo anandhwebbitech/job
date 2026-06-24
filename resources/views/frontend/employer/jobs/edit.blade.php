@@ -1,6 +1,6 @@
 {{-- ════════════════════════════════════════════════════════
      resources/views/employer/jobs/edit.blade.php
-     Edit Job — LinearJobs Employer Dashboard (Ultra Redesign)
+     Edit Job — QueueJobs Employer Dashboard (Ultra Redesign)
 ════════════════════════════════════════════════════════ --}}
 @extends('frontend.employer.layouts.app')
 @section('title', 'Edit Job — ' . $job->job_title)

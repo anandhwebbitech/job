@@ -2,7 +2,7 @@
 resources/views/frontend/auth/employer-login.blade.php
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Employer Login – LinearJobs')
+@section('title', 'Employer Login – QueueJobs')
 
 @push('styles')
   <style>
@@ -616,7 +616,7 @@ resources/views/frontend/auth/employer-login.blade.php
         <!-- Logo -->
         <div class="rp-logo">
           <div class="rp-logo-ico"><i class="fa-solid fa-building"></i></div>
-          LinearJobs
+          Queue Jobs
         </div>
 
         <div class="rp-heading">Employer Login</div>

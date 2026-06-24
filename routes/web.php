@@ -40,6 +40,7 @@ use App\Http\Controllers\BannerPlanController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\LocationController;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Admin\AdminResumeController;
 
 
 
@@ -66,6 +67,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admindashboard');
         Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
         Route::resource('skills', SkillController::class);
+        Route::resource('adminresums', AdminResumeController::class);
         Route::resource('educations', EducationController::class);
         Route::resource('locations', LocationController::class);
         Route::resource('employers', EmployerController::class);

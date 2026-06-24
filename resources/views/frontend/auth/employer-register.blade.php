@@ -3,7 +3,7 @@
      Multi-Step Employer Registration – LinearJobs
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Register Your Company – LinearJobs')
+@section('title', 'Register Your Company – QueueJobs')
 
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -132,7 +132,7 @@ textarea.lj-input{padding-top:10px;resize:vertical;min-height:90px;}
     <div class="lj-reg-head">
       <div class="lj-reg-head-ico"><i class="fa-solid fa-building-flag"></i></div>
       <div class="lj-reg-title">Register Your Company</div>
-      <div class="lj-reg-sub">Join LinearJobs and connect with skilled professionals across Tamil Nadu. Post jobs in minutes.</div>
+      <div class="lj-reg-sub">Join QueueJobs and connect with skilled professionals across Tamil Nadu. Post jobs in minutes.</div>
     </div>
 
     {{-- Step Indicator --}}
@@ -534,7 +534,7 @@ textarea.lj-input{padding-top:10px;resize:vertical;min-height:90px;}
 
             <div class="lj-info-box">
               <i class="fa-solid fa-shield-check"></i>
-              <span>Your business details are encrypted and used only for verification. Only verified employers can post jobs on LinearJobs.</span>
+              <span>Your business details are encrypted and used only for verification. Only verified employers can post jobs on QueueJobs.</span>
             </div>
 
             <div class="lj-frow">

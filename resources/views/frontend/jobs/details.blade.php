@@ -1,9 +1,9 @@
 {{-- ═══════════════════════════════════════════════════
      resources/views/frontend/jobs/job-details.blade.php
-     Job Details – LinearJobs
+     Job Details – QueueJobs
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', ($job->title ?? 'Job Details').' – LinearJobs')
+@section('title', ($job->title ?? 'Job Details').' – QueueJobs')
 
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />

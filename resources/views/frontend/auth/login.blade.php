@@ -2,7 +2,7 @@
 resources/views/frontend/auth/employer-login.blade.php
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Employer Login – LinearJobs')
+@section('title', 'Employer Login – QueueJobs')
 
 @push('styles')
   <style>
@@ -1133,7 +1133,7 @@ resources/views/frontend/auth/employer-login.blade.php
         <div class="for">or</div>
 
         <div class="auth-switch" id="switchBottom">
-          New to LinearJobs? <a href="/register" class="blue" id="switchRegLink">Register Free</a>
+          New to QueueJobs? <a href="/register" class="blue" id="switchRegLink">Register Free</a>
           <div class="switch-divider"></div>
           Are you an employer? <a href="#" class="green" onclick="selectType('employer'); return false;"
             id="switchOtherLink">Employer Login</a>
@@ -1218,7 +1218,7 @@ resources/views/frontend/auth/employer-login.blade.php
       // ── Switch bottom links
       if (isJs) {
         document.getElementById('switchBottom').innerHTML = `
-        New to LinearJobs? <a href="{{ route('jobseeker.register') }}" class="blue">Register Free</a>
+        New to QueueJobs? <a href="{{ route('jobseeker.register') }}" class="blue">Register Free</a>
         <div class="switch-divider"></div>
         Are you an employer? <a href="#" class="green" onclick="selectType('employer'); return false;">Employer Login</a>
       `;

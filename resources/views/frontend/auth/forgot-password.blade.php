@@ -2,7 +2,7 @@
      resources/views/frontend/auth/forgot-password.blade.php
 ═══════════════════════════════════════════════════ --}}
 @extends('frontend.app')
-@section('title', 'Forgot Password – LinearJobs')
+@section('title', 'Forgot Password – QueueJobs')
 
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />

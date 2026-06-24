@@ -1,5 +1,5 @@
 @extends('frontend.app')
-@section('title', 'Forgot Password – LinearJobs')
+@section('title', 'Forgot Password – QueueJobs')
 
 @push('styles')
     <style>

@@ -1,6 +1,6 @@
 {{-- ══════════════════════════════════════════════════════════
      resources/views/employer/partials/sidebar.blade.php
-     LinearJobs Employer Dashboard – Sidebar
+     QueueJobs Employer Dashboard – Sidebar
 ══════════════════════════════════════════════════════════ --}}
 
 @php
@@ -83,7 +83,7 @@
   {{-- Brand --}}
   <div class="sb-brand">
     <a href="{{ route('employer.dashboard') }}" class="sb-logo">
-        Linear<em>Jobs</em>
+        Queue<em>Jobs</em>
     </a>
 
     <button class="sb-close" id="sbClose">
