@@ -290,7 +290,7 @@ textarea.lj-input{padding-top:10px;resize:vertical;min-height:90px;}
               <label class="lj-label" for="pincode">Pincode <span class="req">*</span></label>
               <div class="lj-iw">
                 <i class="fa-solid fa-hashtag lj-iw-ico"></i>
-                <input type="text" id="pincode" name="pincode"
+                <input type="number" id="pincode" name="pincode"
                   class="lj-input @error('pincode') field-error @enderror"
                   placeholder="6-digit pincode"
                   value="{{ old('pincode') }}"
@@ -355,7 +355,7 @@ textarea.lj-input{padding-top:10px;resize:vertical;min-height:90px;}
                 <label class="lj-label" for="owner_mobile">Owner Mobile Number <span class="req">*</span></label>
                 <div class="lj-iw">
                   <i class="fa-solid fa-mobile-screen lj-iw-ico"></i>
-                  <input type="tel" id="owner_mobile" name="owner_mobile"
+                  <input type="number" id="owner_mobile" name="owner_mobile"
                     class="lj-input @error('owner_mobile') field-error @enderror"
                     placeholder="+91 XXXXX XXXXX"
                     value="{{ old('owner_mobile') }}"
