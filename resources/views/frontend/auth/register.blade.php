@@ -2617,7 +2617,7 @@
                                         <label class="flbl" for="ec_pin">Pincode <span
                                                 class="req">*</span></label>
                                         <div class="fiw"><i class="fa-solid fa-hashtag fiw-l"></i><input
-                                                type="text" id="c_pincode" name="c_pincode" class="finput fc-g"
+                                                type="number" id="c_pincode" name="c_pincode" class="finput fc-g"
                                                 placeholder="6-digit pincode" maxlength="6" />
                                         </div>
                                         <div class="ferr-msg" id="e-c_pincode"><i
@@ -2651,7 +2651,7 @@
                                             <label class="flbl" for="eo_mob">Owner Mobile <span
                                                     class="req">*</span></label>
                                             <div class="fiw"><i class="fa-solid fa-mobile-screen fiw-l"></i><input
-                                                    type="tel" id="c_mobile" name="c_mobile" class="finput fc-g"
+                                                    type="number" id="c_mobile" name="c_mobile" class="finput fc-g"
                                                     placeholder="+91 XXXXX XXXXX" maxlength="15" oninput="if(document.getElementById('sameAsOwner').checked) document.getElementById('c_hr_mobile').value = this.value;" /></div>
                                             <div class="ferr-msg" id="e-c_mobile"><i
                                                     class="fa-solid fa-circle-exclamation"></i><span>Enter a valid 10-digit
@@ -2785,7 +2785,7 @@
                                                 <!-- Branch Name -->
                                                 <div class="fgrp">
                                                     <label class="flbl">
-                                                        Branch Name <span class="req">*</span>
+                                                        Branch Name
                                                     </label>
 
                                                     <div class="fiw">
@@ -2801,7 +2801,7 @@
                                                 <!-- Branch Email -->
                                                 <div class="fgrp">
                                                     <label class="flbl">
-                                                        Branch Email <span class="req">*</span>
+                                                        Branch Email
                                                     </label>
 
                                                     <div class="fiw">
@@ -2827,7 +2827,7 @@
                                                 <!-- Branch Mobile -->
                                                 <div class="fgrp">
                                                     <label class="flbl">
-                                                        Branch Mobile <span class="req">*</span>
+                                                        Branch Mobile
                                                     </label>
 
                                                     <div class="fiw">
@@ -2867,7 +2867,7 @@
                                             <!-- Branch Address -->
                                             <div class="fgrp">
                                                 <label class="flbl">
-                                                    Branch Address <span class="req">*</span>
+                                                    Branch Address
                                                 </label>
 
                                                 <div class="fiw">
@@ -2941,10 +2941,6 @@
                                         </div>
                                         <div class="ferr-msg" id="e-add_doc_number"><i class="fa-solid fa-circle-exclamation"></i><span>Please enter the document number.</span></div>
                                     </div>
-                                </div>
-
-                                <!-- Emp Panel 5 -->
-                                <div class="panel" id="emp-p5">
                                     <div class="frow">
                                         <div class="fgrp">
                                             <label class="flbl">GST Certificate <span class="req">*</span></label>
@@ -2972,7 +2968,10 @@
                                             <div class="ferr-msg" id="e-add_doc_file"><i class="fa-solid fa-circle-exclamation"></i><span>Document file is required.</span></div>
                                         </div>
                                     </div>
-                                    
+                                </div>
+
+                                <!-- Emp Panel 5 -->
+                                <div class="panel" id="emp-p5"> 
                                     <div class="summary-box">
                                         <div class="summary-title"><i class="fa-solid fa-list-check"
                                                 style="color:var(--green);"></i> Registration Summary</div>

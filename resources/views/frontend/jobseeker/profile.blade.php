@@ -112,8 +112,13 @@
           <label class="lj-label">Date of Birth</label>
           <div class="lj-input-wrap">
             <i class="fa-solid fa-calendar lj-input-ico"></i>
-            <input class="lj-input has-ico" type="date" name="dob"
-              value="{{ old('dob', $user->details->dob ?? '') }}"/>
+            <input 
+                class="lj-input has-ico"
+                type="date"
+                name="dob"
+                min="1950-01-01"
+                value="{{ old('dob', $user->details->dob ?? '') }}"
+            />
           </div>
         </div>
         <div class="lj-fgroup">
