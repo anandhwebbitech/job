@@ -710,9 +710,9 @@
 
                     {{-- Working Hours --}}
                     <div class="lj-sidebar-card">
-                        <div class="lj-sidebar-card-title">
+                        {{-- <div class="lj-sidebar-card-title">
                             <i class="fa-solid fa-clock"></i> Working Hours
-                        </div>
+                        </div> --}}
 
                         <div class="lj-hours-status open-247">
                             <i class="fa-solid fa-circle-check"></i> Open 24/7

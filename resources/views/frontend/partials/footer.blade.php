@@ -50,7 +50,7 @@
         <a href="{{ route('employer.singleregister') }}" class="lj-ft-link">Post a Job</a>
         <a href="{{ route('employer.login') }}"      class="lj-ft-link">Employer Login</a>
         <a href="{{ route('employer.singleregister') }}"    class="lj-ft-link">Register Company</a>
-        <a href="{{ route('pricing') }}"             class="lj-ft-link">Pricing Plans</a>
+        {{-- <a href="{{ route('pricing') }}"             class="lj-ft-link">Pricing Plans</a> --}}
         <a href="{{ route('jobs.index') }}"          class="lj-ft-link">Hire Talent</a>
       </div>
 

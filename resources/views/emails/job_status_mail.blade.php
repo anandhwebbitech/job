@@ -16,7 +16,7 @@
     <!-- Header -->
     <tr>
         <td style="background:#0d6efd; color:#ffffff; padding:20px; text-align:center;">
-            <h2 style="margin:0;">Linner Job Portal</h2>
+            <h2 style="margin:0;">Queue Job Portal</h2>
         </td>
     </tr>
 
@@ -82,7 +82,7 @@
 
             <p style="font-size:14px;">
                 Regards,<br>
-                <strong>Linner Job Portal Team</strong>
+                <strong>Queue Job Portal Team</strong>
             </p>
 
         </td>
@@ -91,7 +91,7 @@
     <!-- Footer -->
     <tr>
         <td style="background:#f1f1f1; text-align:center; padding:15px; font-size:12px; color:#777;">
-            © {{ date('Y') }} Linner Job Portal. All rights reserved.
+            © {{ date('Y') }} Queue Job Portal. All rights reserved.
         </td>
     </tr>
 

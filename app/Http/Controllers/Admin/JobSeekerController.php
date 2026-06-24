@@ -135,7 +135,7 @@ class JobSeekerController extends Controller
 
         Mail::send('emails.registermail', $data, function ($message) use ($data, $statusText) {
             $message->to($data['email'])
-                ->subject('Linner Job Portal Registration is ' . $statusText);
+                ->subject('Queue Job Portal Registration is ' . $statusText);
         });
     }
 

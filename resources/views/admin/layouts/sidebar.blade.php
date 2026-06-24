@@ -111,6 +111,11 @@
                 <i class="fa fa-location-dot"></i> Location
             </a>
 
+            <a href="{{ route('admin.skills.index')}}"
+               class="{{ request()->is('admin/skills*') ? 'active' : '' }}">
+                <i class="fa fa-lightbulb"></i> Resume
+            </a>
+
         </div>
         {{-- Plan --}}
         <a onclick="toggleSubmenu(this)"

@@ -38,9 +38,9 @@
             <li class="{{ request()->routeIs('employer.singleregister') ? 'lj-cur' : '' }}">
                 <a href="{{ route('employer.singleregister') }}">Post a Job</a>
             </li>
-            <li class="{{ request()->routeIs('pricing') ? 'lj-cur' : '' }}">
+            {{-- <li class="{{ request()->routeIs('pricing') ? 'lj-cur' : '' }}">
                 <a href="{{ route('pricing') }}">Pricing</a>
-            </li>
+            </li> --}}
             <li class="{{ request()->routeIs('contact') ? 'lj-cur' : '' }}">
                 <a href="{{ route('contact') }}">Contact</a>
             </li>

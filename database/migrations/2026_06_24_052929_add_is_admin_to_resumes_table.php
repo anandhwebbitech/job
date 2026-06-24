@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('job_applications', function (Blueprint $table) {
+        Schema::table('resumes', function (Blueprint $table) {
             //
-            // $table->date('interview_date')->nullable();
-            // $table->string('interview_mode')->nullable();
+             $table->boolean('is_admin')
+                  ->default(0)
+                  ->after('id');
         });
     }
 
@@ -23,8 +24,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('job_applications', function (Blueprint $table) {
+        Schema::table('resumes', function (Blueprint $table) {
             //
+             $table->dropColumn('is_admin');
         });
     }
 };
